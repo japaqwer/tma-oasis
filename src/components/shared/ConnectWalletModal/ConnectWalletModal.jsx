@@ -1,34 +1,32 @@
+// ConnectWalletModal.jsx
 "use client";
-
 import React from "react";
-import { FaWallet, FaTimes } from "react-icons/fa";
+import { TonConnectButton, useTonConnectUI } from "@tonconnect/ui-react";
 import s from "./ConnectWalletModal.module.scss";
 
 export default function ConnectWalletModal({ onClose }) {
+  const { connect, account, disconnect } = useTonConnectUI();
+
   return (
     <div className={s.backdrop} onClick={onClose}>
       <div className={s.modal} onClick={(e) => e.stopPropagation()}>
         <button className={s.closeBtn} onClick={onClose}>
-          <FaTimes />
+          ×
         </button>
+        <h2 className={s.title}>Подключите TON-кошелёк</h2>
 
-        <h2 className={s.title}>
-          Подключи свой <span>TON</span> wallet
-        </h2>
-        <p className={s.subtitle}>
-          используй свой кошелек в Telegram
-          <br />и получай $ODDB каждый день
-        </p>
-
-        <button
-          className={s.connectBtn}
-          onClick={() => {
-            // здесь инициируйте логику Telegram Web App
-          }}
-        >
-          <FaWallet className={s.walletIcon} />
-          Подключить кошелек
-        </button>
+        {/* ИЛИ свой вариант */}
+        {!account ? (
+          <button className={s.connectBtn} onClick={() => connect()}>
+            Connect TON Wallet
+          </button>
+        ) : (
+          <div className={s.account}>
+            <p>Connected:</p>
+            <code>{account.address}</code>
+            <button onClick={() => disconnect()}>Disconnect</button>
+          </div>
+        )}
       </div>
     </div>
   );

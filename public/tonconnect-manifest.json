@@ -1,5 +1,16 @@
 {
-  "url": "https://tma-oasis.vercel.app",
-  "name": "Oasis Telegram Mini App",
-  "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrViWg0D72Yqmv2P4r2vO7arNp_IoIofGKyw&s"
+  "name": "Oasis TMA",
+  "description": "TON Web App for Oasis TMA",
+  "icons": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrViWg0D72Yqmv2P4r2vO7arNp_IoIofGKyw&s"
+  ],
+  "permissions": ["ton_address", "ton_balance"],
+  "ui": {
+    "buttonStyle": {
+      "backgroundColor": "#8b5cf6",
+      "borderRadius": "12px",
+      "color": "#fff",
+      "padding": "10px 20px"
+    }
+  }
 }
