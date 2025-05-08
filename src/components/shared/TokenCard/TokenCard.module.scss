@@ -1,0 +1,130 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- Существующие стили для основной карточки ---- */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .balance {
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      color: #111827;
+    }
+    p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  }
+
+  .level {
+    background: #f3e8ff;
+    color: #8b5cf6;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 9999px;
+  }
+}
+
+/* info */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .daily,
+  .timer {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #111827;
+
+    span {
+      margin-left: 4px;
+    }
+  }
+
+  .iconGreen {
+    color: #10b981;
+    font-size: 16px;
+  }
+
+  .iconBlue {
+    color: #3b82f6;
+    font-size: 16px;
+  }
+}
+
+/* button */
+.button {
+  width: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* ---- Новые стили для нижних карточек ---- */
+.bottom {
+  display: flex;
+  gap: 16px;
+}
+
+.smallCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+  }
+  p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #6b7280;
+  }
+}
+
+.iconBlueSmall {
+  font-size: 20px;
+  color: #3b82f6;
+}
+
+.iconPurpleSmall {
+  font-size: 20px;
+  color: #8b5cf6;
+}
