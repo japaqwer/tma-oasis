@@ -2,7 +2,7 @@
 import TelegramBot from "node-telegram-bot-api";
 
 const TOKEN = "8093601866:AAGIY6LVOBb21JXa3iWHvOywQvE7pV9juJo";
-const URL = "https://2455-46-251-192-211.ngrok-free.app";
+const URL = "https://tma-oasis.vercel.app";
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
