@@ -3,13 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaHome, FaChartLine, FaCoins, FaUsers } from "react-icons/fa";
+import { FaHome, FaChartLine, FaUsers, FaHistory } from "react-icons/fa";
 import s from "./Navbar.module.scss";
 
 const items = [
   { key: "home", icon: FaHome, label: "Главная", href: "/" },
   { key: "levels", icon: FaChartLine, label: "Уровни", href: "/levels" },
-  { key: "rewards", icon: FaCoins, label: "Награды", href: "/rewards" },
+  { key: "history", icon: FaHistory, label: "История", href: "/history" },
   { key: "partners", icon: FaUsers, label: "Партнеры", href: "/partners" },
 ];
 

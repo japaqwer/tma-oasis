@@ -1,0 +1,134 @@
+.block {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовок + фильтр */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.filterButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+/* Панель фильтров */
+.filterPanel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #ffffff;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.filterTitle {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 6px;
+
+  input {
+    margin-right: 8px;
+  }
+}
+
+/* Список записей */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.amount {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.date {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Бейдж статуса */
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.statusClaimed {
+  background-color: #10b981;
+} /* зелёный */
+.statusPending {
+  background-color: #f59e0b;
+} /* жёлто-оранжевый */
+.statusAvailable {
+  background-color: #3b82f6;
+} /* синий */
+.statusExpired {
+  background-color: #ef4444;
+} /* красный */
+
+/* Кнопка “Показать ещё” */
+.showMoreWrap {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.showMore {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+}
+
+.showMore:hover {
+  background-color: #7c3aed;
+}

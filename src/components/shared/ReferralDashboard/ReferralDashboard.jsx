@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import s from "./ReferralDashboard.module.scss";
 
@@ -29,8 +31,21 @@ export default function ReferralDashboard({
       date: "19 мая 2025",
       reward: "+60 ODDB",
     },
+    {
+      id: 4,
+      avatar: "./assets/images/avatar.png",
+      name: "User345678",
+      date: "18 мая 2025",
+      reward: "+603 ODDB",
+    },
   ],
 }) {
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 3, partners.length));
+  };
+
   return (
     <div className={s.dashboard}>
       {/* Статистика */}
@@ -51,7 +66,7 @@ export default function ReferralDashboard({
       <div className={s.partnersSection}>
         <h3 className={s.partnersHeader}>Приглашённые партнёры</h3>
         <div className={s.partnersList}>
-          {partners.map((p) => (
+          {partners.slice(0, visibleCount).map((p) => (
             <div key={p.id} className={s.partnerItem}>
               <img src={p.avatar} alt={p.name} className={s.avatar} />
               <div className={s.info}>
@@ -62,6 +77,14 @@ export default function ReferralDashboard({
             </div>
           ))}
         </div>
+
+        {visibleCount < partners.length && (
+          <div className={s.showMoreContainer}>
+            <button className={s.showMoreButton} onClick={handleShowMore}>
+              Показать ещё
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
