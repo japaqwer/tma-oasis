@@ -1,55 +1,57 @@
 .header {
-  background-color: #fff;
-  padding: 10px 20px;
+  background: #fff;
+  padding: 20px 15px;
   border-bottom: 1px solid #e5e7eb;
 
   .connect_wallet {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
 
     .connect_title {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
 
-      p {
-        color: #4b5563;
-        font-size: 18px;
+      p,
+      .username {
         margin: 0;
+        font-size: 14px;
+        color: #4b5563;
       }
     }
 
-    .user_data {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .button,
+    .disconnectBtn {
+      padding: 8px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: opacity 0.2s;
 
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
+      &:disabled {
+        opacity: 0.6;
+        cursor: default;
       }
     }
 
     .button {
-      /* Градиент от синего к фиолетовому */
       background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
-      color: #ffffff;
-      font-size: 14px;
-      line-height: 1;
-      padding: 8px 20px;
-      border: none;
-      border-radius: 9999px; /* максимально скруглённая "pill" форма */
-      cursor: pointer;
-      transition: opacity 0.2s ease, transform 0.1s ease;
+      color: #fff;
 
       &:hover {
         opacity: 0.9;
       }
-      &:active {
-        transform: scale(0.98);
+    }
+
+    .disconnectBtn {
+      background: #ef4444;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.9;
       }
     }
   }
