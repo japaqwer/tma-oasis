@@ -11,9 +11,9 @@ export default function Header() {
   return (
     <header className={s.header}>
       <div className={s.connect_wallet}>
-        <div className={s.connect_title}>
-          <FaWallet color="#8B5CF6" />
-          <p>Подключить кошелек</p>
+        <div className={s.user_data}>
+          <img src="./assets/images/avatar.png" alt="" />
+          <p>@username</p>
         </div>
         <button className={s.button} onClick={() => setIsModalOpen(true)}>
           Connect
