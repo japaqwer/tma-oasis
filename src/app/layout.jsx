@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/layout/Header/Header";
 import Navbar from "@/components/layout/Navbar/Navbar";
-import { TonConnectUIProvider } from "@tonconnect/ui-react";
+// import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TonConnectUIProvider manifestUrl="">
-          <Header />
-          {children}
-          <Navbar />
-        </TonConnectUIProvider>
+        {/* <TonConnectUIProvider manifestUrl=""> */}
+        <Header />
+        {children}
+        <Navbar />
+        {/* </TonConnectUIProvider> */}
       </body>
     </html>
   );
