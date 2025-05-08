@@ -1,21 +1,33 @@
 "use client";
 
 import React from "react";
-import { useTonAddress, useTonConnectModal } from "@tonconnect/ui-react";
+import {
+  useTonAddress,
+  useTonConnectModal,
+  useTonConnectUI,
+} from "@tonconnect/ui-react";
 import { FaWallet } from "react-icons/fa";
 import s from "./Header.module.scss";
 
 export default function Header() {
-  // адрес в пользовательском формате, или пустая строка, если не подключено
+  // текущий адрес или пустая строка
   const address = useTonAddress();
-  // методы для открытия и закрытия модального окна
-  const { open, close } = useTonConnectModal();
+  // метод для открытия модального окна
+  const { open } = useTonConnectModal();
+  // экземпляр TonConnectUI для disconnect()
+  const [tonConnectUI] = useTonConnectUI();
 
-  const handleConnectClick = () => {
-    if (address) {
-      close(); // отключить
-    } else {
-      open(); // открыть список кошельков
+  const handleConnectClick = async () => {
+    try {
+      if (address) {
+        // полное отключение кошелька
+        await tonConnectUI.disconnect();
+      } else {
+        // открываем выбор кошелька
+        await open();
+      }
+    } catch (err) {
+      console.error("TonConnect error:", err);
     }
   };
 
