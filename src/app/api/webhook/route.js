@@ -7,19 +7,18 @@ const WEB_APP_URL = "https://tma-oasis.vercel.app";
 
 const bot = new TelegramBot(TOKEN, { webHook: true });
 
-// Отвечаем на GET (Telegram проверяет)
 export async function GET(request) {
+  // отвечаем на проверочные GET от Telegram
   return NextResponse.json({ ok: true });
 }
 
-// Обрабатываем обновления от Telegram
 export async function POST(request) {
   const update = await request.json();
-  console.log("📨 Telegram update:", JSON.stringify(update));
+  console.log("📨 update:", JSON.stringify(update));
 
   const msg = update.message;
   if (msg?.text?.startsWith("/start")) {
-    console.log("➡️ /start received, sending Web App button");
+    console.log("➡️ /start received");
     await bot.sendMessage(msg.chat.id, "Запустить приложение:", {
       reply_markup: {
         inline_keyboard: [
@@ -28,6 +27,5 @@ export async function POST(request) {
       },
     });
   }
-
   return NextResponse.json({ ok: true });
 }
